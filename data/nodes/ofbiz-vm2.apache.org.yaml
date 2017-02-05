@@ -1,4 +1,14 @@
----
+host:
+  demo-old.ofbiz.apache.org:
+    ip: 10.20.2.166
+    ensure: present
+  demo-stable.ofbiz.apache.org:
+    ip: 10.20.2.166
+    ensure: present
+  demo-trunk.ofbiz.apache.org:
+    ip: 10.20.2.166
+    ensure: present
+
 classes:
   - default_pvm_asf
   - apache
