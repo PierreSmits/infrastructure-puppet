@@ -11,7 +11,7 @@ class build_slaves::jenkins (
   $gsr_pw = '',
   $jenkins_packages = [],
   $tools = ['ant','clover','findbugs','forrest','java','maven', 'jiracli'],
-  $ant = ['apache-ant-1.8.4', 'apache-ant-1.9.4', 'apache-ant-1.9.7'],
+  $ant = ['apache-ant-1.8.4', 'apache-ant-1.9.4', 'apache-ant-1.9.7', 'apache-ant-1.9.9', 'apache-ant-1.10.1'],
   $clover = ['clover-ant-4.1.2'],
   $findbugs = ['findbugs-2.0.3', 'findbugs-3.0.1'],
   $forrest = ['apache-forrest-0.9'],
@@ -19,7 +19,7 @@ class build_slaves::jenkins (
   # $maven_old = ['apache-maven-3.0.4','apache-maven-3.2.1'],
   $maven = ['apache-maven-2.2.1', 'apache-maven-3.0.4', 'apache-maven-3.0.5', 'apache-maven-3.2.1', 'apache-maven-3.2.5', 'apache-maven-3.3.3', 'apache-maven-3.3.9'],
   $java_jenkins = ['jdk1.5.0_17-32','jdk1.5.0_17-64','jdk1.6.0_11-32','jdk1.6.0_11-64','jdk1.6.0_20-32','jdk1.6.0_20-64','jdk1.6.0_27-32','jdk1.6.0_27-64','jdk1.6.0_45-32','jdk1.7.0_04','jdk1.7.0_55', 'jdk1.8.0'],
-  $java_asfpackages = ['jdk1.5.0_22-32', 'jdk1.5.0_22-64', 'jdk1.6.0_20-32-unlimited-security', 'jdk1.6.0_45-64', 'jdk1.7.0-32', 'jdk1.7.0-64', 'jdk1.7.0_25-32', 'jdk1.7.0_25-64', 'jdk1.7.0_79-unlimited-security', 'jdk1.7.0_80', 'jdk1.8.0_66-unlimited-security', 'jdk1.8.0_92', 'jdk1.8.0_102', 'jdk-9-ea-b128', 'jdk-9-ea-b132', 'jdk-9-ea-b139', 'jigsaw-jdk-9-ea-b142', 'ibm-java-x86_64-60', 'ibm-java-x86_64-70', 'ibm-java-x86_64-80'],
+  $java_asfpackages = ['jdk1.5.0_22-32', 'jdk1.5.0_22-64', 'jdk1.6.0_20-32-unlimited-security', 'jdk1.6.0_45-64', 'jdk1.7.0-32', 'jdk1.7.0-64', 'jdk1.7.0_25-32', 'jdk1.7.0_25-64', 'jdk1.7.0_79-unlimited-security', 'jdk1.7.0_80', 'jdk1.8.0_66-unlimited-security', 'jdk1.8.0_92', 'jdk1.8.0_102', 'jdk1.8.0_121', 'jdk-9-ea-b128', 'jdk-9-ea-b132', 'jdk-9-ea-b139', 'jigsaw-jdk-9-ea-b156', 'ibm-java-x86_64-60', 'ibm-java-x86_64-70', 'ibm-java-x86_64-80'],
 ) {
 
   require stdlib
@@ -273,7 +273,7 @@ class build_slaves::jenkins (
   build_slaves::symlink_ant          { $ant: }
   file { '/home/jenkins/tools/ant/latest':
     ensure => link,
-    target => '/usr/local/asfpackages/ant/apache-ant-1.9.7',
+    target => '/usr/local/asfpackages/ant/apache-ant-1.10.1',
   }
 
   # findbugs symlinks - populate array, make all symlinks, make latest symlink
@@ -323,7 +323,7 @@ class build_slaves::jenkins (
   }
   file { '/home/jenkins/tools/java/latest':
     ensure => link,
-    target => '/usr/local/asfpackages/java/jdk1.8.0_102',
+    target => '/usr/local/asfpackages/java/jdk1.8.0_121',
   }
   file { '/home/jenkins/tools/java/latest1.4':
     ensure => link,
@@ -343,7 +343,7 @@ class build_slaves::jenkins (
   }
   file { '/home/jenkins/tools/java/latest1.8':
     ensure => link,
-    target => '/usr/local/asfpackages/java/jdk1.8.0_102',
+    target => '/usr/local/asfpackages/java/jdk1.8.0_121',
   }
 
   service { 'apache2':

@@ -297,6 +297,8 @@ build_slaves::jenkins::jenkins_packages:
   - asf-build-apache-ant-1.8.4
   - asf-build-apache-ant-1.9.4
   - asf-build-apache-ant-1.9.7
+  - asf-build-apache-ant-1.9.9
+  - asf-build-apache-ant-1.10.1
   - asf-build-apache-forrest-0.9
   - asf-build-apache-maven-2.2.1
   - asf-build-apache-maven-3.0.4
@@ -343,10 +345,11 @@ build_slaves::jenkins::jenkins_packages:
   - asf-build-jdk1.8.0-66-unlimited-security
   - asf-build-jdk1.8.0-92
   - asf-build-jdk1.8.0-102
+  - asf-build-jdk1.8.0-121
   - asf-build-jdk9-ea-b128
   - asf-build-jdk9-ea-b132
   - asf-build-jdk9-ea-b139
-  - asf-build-jigsaw-jdk9-ea-b142
+  - asf-build-jigsaw-jdk9-ea-b156
   - asf-build-jira-cli-2.1.0
 
 # Not all build slaves. This is just for Jenkins slaves.
@@ -451,6 +454,8 @@ buildbot_slave::buildbot::buildbot_packages:
   - asf-build-apache-ant-1.8.4
   - asf-build-apache-ant-1.9.4
   - asf-build-apache-ant-1.9.7
+  - asf-build-apache-ant-1.9.9
+  - asf-build-apache-ant-1.10.1
   - asf-build-apache-maven-2.2.1
   - asf-build-apache-maven-3.0.4
   - asf-build-apache-maven-3.0.5
@@ -469,9 +474,10 @@ buildbot_slave::buildbot::buildbot_packages:
   - asf-build-jdk1.8.0-66-unlimited-security
   - asf-build-jdk1.8.0-92
   - asf-build-jdk1.8.0-102
+  - asf-build-jdk1.8.0-121
   - asf-build-jdk9-ea-b132
   - asf-build-jdk9-ea-b139
-  - asf-build-jigsaw-jdk9-ea-b142
+  - asf-build-jigsaw-jdk9-ea-b156
 
 buildbot_slave::bb_basepackages:
   - ant
